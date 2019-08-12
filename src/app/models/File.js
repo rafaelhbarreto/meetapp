@@ -18,7 +18,7 @@ class File extends Model {
   }
 
   static associate(models) {
-    this.hasOne(models.Meetup);
+    this.hasOne(models.Meetup, { foreignKey: 'file_id' });
   }
 }
 

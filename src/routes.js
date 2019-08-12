@@ -15,6 +15,7 @@ const upload = multer(multerConfig);
 
 routes.post('/sessions', SessionController.store);
 routes.post('/users', UserController.store);
+routes.get('/users', UserController.index);
 
 routes.use(authMiddleware);
 
@@ -23,5 +24,8 @@ routes.put('/users', UserController.update);
 
 // meetups
 routes.post('/meetups', MeetupController.store);
+routes.put('/meetups/:id', MeetupController.update);
+routes.get('/meetups', MeetupController.index);
+routes.delete('/meetups/:id', MeetupController.delete);
 
 export default routes;
