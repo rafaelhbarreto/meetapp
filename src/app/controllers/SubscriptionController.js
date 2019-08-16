@@ -1,3 +1,5 @@
+import hbs from 'nodemailer-express-handlebars';
+import exphbs from 'express-handlebars';
 import Subscription from '../models/Subscription';
 import Meetup from '../models/Meetup';
 import User from '../models/User';
@@ -53,11 +55,16 @@ class SubscriptionController {
 
     const organizer = await User.findByPk(meetup.user_id);
 
-
     await Mail.sendMail({
       to: `${organizer.email} <${organizer.email}>`,
       subject: 'New subscribe',
-      text: `A new subscribe in your Event: ${meetup.title}`,
+      template: 'subscription',
+      context: {
+        organizer: organizer.name,
+        meetup: meetup.title,
+        user: user.name,
+        email: user.email,
+      },
     });
 
     return res.status(201).json(subscription);
