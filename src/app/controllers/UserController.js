@@ -1,7 +1,12 @@
 import * as Yup from 'yup';
-import User from '../models/user';
+import User from '../models/User';
 
 class UserController {
+  async index(req, res) {
+    const users = await User.findAll();
+    res.json(users);
+  }
+
   /**
    * Stores a user on database
    */
