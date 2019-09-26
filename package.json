@@ -8,11 +8,15 @@
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "jsonwebtoken": "^8.5.1",
+<<<<<<< HEAD
+    "pg": "^7.12.0",
+=======
     "multer": "^1.4.2",
     "mysql": "^2.17.1",
     "mysql2": "^1.6.5",
     "nodemailer": "^6.3.0",
     "nodemailer-express-handlebars": "^3.1.0",
+>>>>>>> 56753601cd1ed9de4446d7657067b58047ed9001
     "sequelize": "^5.9.2",
     "sucrase": "^3.10.1",
     "yup": "^0.27.0"
